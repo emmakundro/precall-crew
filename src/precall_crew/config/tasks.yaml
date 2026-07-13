@@ -1,0 +1,44 @@
+research_task:
+  description: >
+    Research {company} using web search. The current year is 2026 — focus on
+    current, credible information. Cover: (1) company overview — what they
+    sell and to whom, approximate size; (2) recent news from the last 6
+    months — funding, earnings, product launches, leadership changes,
+    partnerships; (3) strategic initiatives and priorities; (4) any
+    technology stack or platform hints. Keep in mind the meeting context:
+    {meeting_context}
+  expected_output: >
+    A structured markdown research digest with clear sections for overview,
+    recent news, strategic initiatives, and technology signals. Every
+    factual claim includes its source URL. No fenced code blocks around the
+    document.
+  agent: account_researcher
+
+competitive_task:
+  description: >
+    Using web search, map the competitive landscape for {company}. Identify
+    their top 3-4 competitors, how {company} positions itself against them,
+    and 2-3 market pressures or trends creating urgency for {company} right
+    now. The current year is 2026 — prioritize recent information.
+  expected_output: >
+    A concise markdown competitive digest: a competitor list with one-line
+    positioning notes, and a short "market pressures" section. Claims cite
+    source URLs.
+  agent: competitive_analyst
+
+brief_task:
+  description: >
+    Using the research digest and competitive digest from the previous
+    tasks, write a one-page pre-call brief for this meeting:
+    {meeting_context}. Ground every point in the provided research — do not
+    invent facts. Talking points must connect {company}'s current
+    priorities to the meeting goal. Discovery questions must be open-ended
+    and specific to this account, not generic.
+  expected_output: >
+    A polished markdown brief using exactly this structure:
+    "# Pre-Call Brief: {company}" then sections "## Company Snapshot"
+    (3-4 bullets), "## What's Happening Now", "## Competitive Landscape",
+    "## Suggested Talking Points" (3-5 bullets), "## Discovery Questions"
+    (5 questions), "## Sources" (URL list). No fenced code blocks around
+    the document.
+  agent: brief_writer

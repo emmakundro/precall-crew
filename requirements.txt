@@ -1,0 +1,7 @@
+crewai>=1.14
+crewai-tools
+python-dotenv
+arize-phoenix
+openinference-instrumentation-crewai
+openinference-instrumentation-anthropic
+streamlit
